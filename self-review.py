@@ -21,6 +21,13 @@ FROM members
 WHERE name = %s
 """
 
+FEE_SQL = """
+SELECT DISTINCT course_id, course_name, fee
+FROM courses
+WHERE course_name = %s 
+"""
+
+
 
 # 수강 신청가능 목록 조회
 def list_courses(conn):
